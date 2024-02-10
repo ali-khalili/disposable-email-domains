@@ -20,9 +20,11 @@ Multiple GitHub projects curate lists of disposable email domains, varying in po
 | [flotwig/disposable-email-addresses](https://github.com/flotwig/disposable-email-addresses) |  [![GitHub stars](https://img.shields.io/github/stars/flotwig/disposable-email-addresses.svg?style=flat&label=Stars&color=yellow)](https://github.com/username/repo/stargazers) [![GitHub forks](https://img.shields.io/github/forks/flotwig/disposable-email-addresses.svg?style=flat&label=Forks&color=blue)](https://github.com/username/repo/network) |  [![Last Commit](https://img.shields.io/github/last-commit/flotwig/disposable-email-addresses.svg?style=flat&label=Updated&color=success)](https://github.com/flotwig/disposable-email-addresses/commits/master) |
 
 
-## MS DNS check
-An MX record is a configuration entry within the DNS zone that specifies which mail server is designated to manage the email for a particular domain. It can be checked for example by `dig` commandline tool:
-
+## MX DNS check
+An MX record is a configuration entry within the DNS zone that specifies which mail server is designated to manage the email for a particular domain. It can be checked by some command-line tools, for example:
 ```
-dig -t mx gmail.com
+nslookup -q=MX DOMAIN_NAME
+dig -t mx DOMAIN_NAME
+host -t MX DOMAIN_NAME
 ```
+This can be helpful to verify if the domain is still valid or expired.
